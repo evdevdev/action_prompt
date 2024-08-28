@@ -8,5 +8,6 @@ class ActionPrompt::PreviewsController < Rails::ApplicationController
   end
 
   def show
+    @preview = ActionPrompt::Preview.find(params[:preview])
   end
 end

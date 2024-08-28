@@ -28,6 +28,10 @@ module ActionPrompt
       def prompts
         public_instance_methods(false).map(&:to_s).sort
       end
+
+      def find(preview_name)
+        all.find { |p| p.preview_name == preview_name }
+      end
     end
   end
 end

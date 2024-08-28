@@ -2,9 +2,9 @@
 
 <% if @previews.any? %>
   <% @previews.each do |preview| %>
-    <h3><%= preview.preview_name %></h3>
+    <h3><%= preview.preview_name.titleize %></h3>
     <% preview.prompts.each do |prompt| %>
-      <p><%= link_to prompt, "/action_prompt/preview/#{prompt}" %></p>
+      <p><%= link_to prompt, "/action_prompt/preview/#{preview.preview_name}/#{prompt}" %></p>
     <% end %>
   <% end %>
 <% else %>
