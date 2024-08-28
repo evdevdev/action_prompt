@@ -1,13 +1,11 @@
-<h1><%= @page_title %></h1>
+<h1>Action Prompt Previews</h1>
 
 <% if @previews.any? %>
   <% @previews.each do |preview| %>
-  <h3><%= link_to preview.preview_name.titleize, url_for(controller: "rails/mailers", action: "preview", path: preview.preview_name) %></h3>
-  <ul>
-  <% preview.emails.each do |email| %>
-  <li><%= link_to email, url_for(controller: "rails/mailers", action: "preview", path: "#{preview.preview_name}/#{email}") %></li>
-  <% end %>
-  </ul>
+    <h3><%= preview.preview_name %></h3>
+    <% preview.prompts.each do |prompt| %>
+      <p><%= link_to prompt, "/action_prompt/preview/#{prompt}" %></p>
+    <% end %>
   <% end %>
 <% else %>
   <p>You have not defined any Action Prompt Previews.</p>

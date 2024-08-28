@@ -4,7 +4,7 @@ class ActionPrompt::PreviewsController < Rails::ApplicationController
 
   def index
     @page_title = "Action Prompt Previews"
-    @previews = []
+    @previews = ActionPrompt::Preview.all
   end
 
   def show
