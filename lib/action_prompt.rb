@@ -1,5 +1,6 @@
 require "action_prompt/version"
 require "action_prompt/engine"
+require "action_prompt/railtie"
 
 module ActionPrompt
   def self.render(template_name, locals: {})
