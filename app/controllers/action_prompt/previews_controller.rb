@@ -1,9 +1,10 @@
-class ActionPrompt::PreviewsController < ApplicationController
-  # Note: if we were to fully copy the mailer pattern, we would have
-  # a line like this:
-  # before_action :require_local!
+class ActionPrompt::PreviewsController < Rails::ApplicationController
+  prepend_view_path ActionPrompt::Engine.root.join("app", "views")
+  before_action :require_local!
 
   def index
+    @page_title = "Action Prompt Previews"
+    @previews = []
   end
 
   def show
