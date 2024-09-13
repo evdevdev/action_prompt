@@ -28,8 +28,10 @@ module ActionPrompt
       def prompts
         # TODO: this might benefit from some memoization
         prompt_methods = public_instance_methods(false).map(&:to_s).sort
+
         prompt_methods.map do |method_name|
-          Prompt.new(name: method_name, slug: "#{preview_name}/#{method_name}")
+          Prompt.new(name: method_name.humanize,
+                     slug: "#{preview_name}/#{method_name}")
         end
       end
 
@@ -37,8 +39,8 @@ module ActionPrompt
         all.find { |preview| preview.name == name }
       end
 
-      def find_prompt(name)
-        prompts.find { |p| p.name == name }
+      def find_prompt(slug)
+        prompts.find { |p| p.slug == slug }
       end
     end
 
