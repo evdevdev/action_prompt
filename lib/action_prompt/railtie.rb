@@ -2,6 +2,8 @@ require "rails/application_controller"
 
 module ActionPrompt
   class Railtie < Rails::Railtie
+    config.autoload_paths << Rails.root.join("tests/prompts")
+
     config.after_initialize do |app|
       if Rails.env.development? || Rails.env.test?
         app.routes.prepend do
