@@ -13,14 +13,12 @@ class ActionPrompt::PreviewTest < ActiveSupport::TestCase
   end
 
   test "render without locals" do
-    skip
-    # result = ActionPrompt.render("hello_world")
-    # assert_equal "You are a helpful assistant who replies with, \"Hello, world!\"", result
+    result = HelloWorldPreview.new.hello_world
+    assert_equal "You are a helpful assistant who replies with, \"Hello, world!\"", result
   end
 
   test "render with locals" do
-    skip
-    # result = ActionPrompt.render("hello_somebody", locals: { name: "John" })
-    # assert_equal "You are a helpful assistant who replies with, \"Hello, John!\"", result
+    result = HelloWorldPreview.new.hello_somebody
+    assert_equal "You are a helpful assistant who replies with, \"Hello, Lenny!\"", result
   end
 end
