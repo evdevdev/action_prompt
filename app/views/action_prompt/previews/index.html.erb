@@ -1,13 +1,20 @@
-<h1>Action Prompt Previews</h1>
-
-<% if @previews.any? %>
-  <% @previews.each do |preview| %>
-    <h3><%= preview.preview_name.titleize %></h3>
-    <% preview.prompts.each do |prompt| %>
-      <p><%= link_to prompt.name, "/action_prompt/previews/#{prompt.slug}" %></p>
-    <% end %>
+<h1 class="text-xl font-semibold">Action Prompt Previews</h1>
+<div class="py-4">
+  <% if @previews.blank? %>
+    <p>You have not defined any Action Prompt Previews.</p>
+    <!-- TODO: Add a link to the Action Prompt documentation here -->
+  <% else %>
+    <div class="space-y-4">
+      <% @previews.each do |preview| %>
+        <div>
+          <h2 class="text-lg font-semibold"><%= preview.preview_name.titleize %></h2>
+          <ul>
+            <% preview.prompts.each do |prompt| %>
+              <li><%= link_to prompt.name, "/action_prompt/previews/#{prompt.slug}", class: "cursor-pointer text-blue-500 underline hover:text-blue-600" %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-<% else %>
-  <p>You have not defined any Action Prompt Previews.</p>
-  <!-- TODO: Add a link to the Action Prompt documentation here -->
-<% end %>
+</div>

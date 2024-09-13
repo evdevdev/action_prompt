@@ -1,8 +1,12 @@
-<h1>Action Prompt Preview</h1>
-<div>
-    <%= @preview_class.name %>
-</div>
-<div>
+<div>Prompt</div>
+<h1 class="text-xl font-semibold">
+  <%= @preview_class.name %>: <%= params[:prompt_name] %>
+</h1>
+<div class="py-4">
+  <div>
+    Output
+  </div>
+  <div class="bg-gray-100 p-2 rounded-md border shadow-sm">
     <%= @prompt_output %>
+  </div>
 </div>
-
