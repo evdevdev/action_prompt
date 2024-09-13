@@ -26,12 +26,37 @@ module ActionPrompt
       end
 
       def prompts
-        public_instance_methods(false).map(&:to_s).sort
+        # TODO: this might benefit from some memoization
+        prompt_methods = public_instance_methods(false).map(&:to_s).sort
+        prompt_methods.map do |method_name|
+          Prompt.new(name: method_name, slug: "#{preview_name}/#{method_name}")
+        end
       end
 
-      def find(preview_name)
-        all.find { |p| p.preview_name == preview_name }
+      def find(name)
+        all.find { |preview| preview.name == name }
       end
+
+      def find_prompt(name)
+        prompts.find { |p| p.name == name }
+      end
+    end
+
+
+    class Prompt
+      attr_reader :name, :slug
+
+      # NOTE: this could probably be a Struct
+      def initialize(name:, slug:)
+        @name = name
+        @slug = slug
+      end
+    end
+
+    def render(template_name, locals: {})
+      controller = ApplicationController.new
+      controller.prepend_view_path(Rails.root.join("app", "prompts"))
+      controller.render_to_string(template: template_name, locals: locals)
     end
   end
 end

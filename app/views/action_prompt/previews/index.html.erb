@@ -4,7 +4,7 @@
   <% @previews.each do |preview| %>
     <h3><%= preview.preview_name.titleize %></h3>
     <% preview.prompts.each do |prompt| %>
-      <p><%= link_to prompt, "/action_prompt/preview/#{preview.preview_name}/#{prompt}" %></p>
+      <p><%= link_to prompt.name, "/action_prompt/previews/#{prompt.slug}" %></p>
     <% end %>
   <% end %>
 <% else %>
