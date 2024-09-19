@@ -2,7 +2,9 @@ require "rails/application_controller"
 
 module ActionPrompt
   class Railtie < Rails::Railtie
-    config.autoload_paths << Rails.root.join("tests/prompts")
+    config.before_configuration do |app|
+      app.config.autoload_paths << Rails.root.join("tests/prompts")
+    end
 
     config.after_initialize do |app|
       if Rails.env.development? || Rails.env.test?
