@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    action_prompt (0.1.0)
+    action_prompt (0.2.0)
       rails (>= 7.2.1)
 
 GEM
