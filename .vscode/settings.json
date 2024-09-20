@@ -11,4 +11,7 @@
     "editor.formatOnType": true,
     "editor.wordSeparators": "`~@#$%^&*()-=+[{]}\\|;:'\",.<>/"
   },
+  "[markdown]": {
+   "editor.formatOnSave": true,
+  }
 }
