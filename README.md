@@ -11,7 +11,7 @@ This draws heavy inspiration from `ActionMailer::Preview`.
 
 ## Motivation & Usage
 
-As LLMs have become ubiquitous in web applications, we've that prompts intended for Claude or GPT have become scattered throughout our codebase or buried within objects. Often, these prompts were built inline through string manipulation. Our thinking was two-fold, 1) Let's come up with a simple pattern for organizing and rendering these prompts, and 2) Let's make them easy to review.
+As LLMs have become ubiquitous in web applications, I've noticed that prompts intended for Claude or GPT have become scattered throughout our codebase or buried within objects. Often, these prompts were built inline through string manipulation. My thinking was two-fold, 1) Let's come up with a simple pattern for organizing and rendering these prompts, and 2) Let's make them easy to review.
 
 ## Installation
 
