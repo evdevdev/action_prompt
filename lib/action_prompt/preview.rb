@@ -21,7 +21,11 @@ module ActionPrompt
         end
       end
 
-      def preview_name
+      def display_name
+        name.titleize
+      end
+
+      def slug
         name.delete_suffix("Preview").underscore
       end
 
@@ -31,7 +35,7 @@ module ActionPrompt
 
         prompt_methods.map do |method_name|
           Prompt.new(name: method_name.humanize,
-                     slug: "#{preview_name}/#{method_name}")
+                     slug: "#{slug}/#{method_name}")
         end
       end
 

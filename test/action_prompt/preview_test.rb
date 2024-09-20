@@ -6,10 +6,10 @@ class ActionPrompt::PreviewTest < ActiveSupport::TestCase
     assert_equal 1, previews.count
   end
 
-  test "preview_name" do
+  test "slug" do
     preview = ActionPrompt::Preview.all.first
 
-    assert_equal "hello_world", preview.preview_name
+    assert_equal "hello_world", preview.slug
   end
 
   test "render without locals" do

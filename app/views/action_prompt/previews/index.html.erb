@@ -7,10 +7,10 @@
     <div class="space-y-4">
       <% @previews.each do |preview| %>
         <div>
-          <h2 class="text-lg font-semibold"><%= preview.preview_name.titleize %></h2>
+          <h2 class="text-lg font-semibold"><%= preview.display_name %></h2>
           <ul>
             <% preview.prompts.each do |prompt| %>
-              <li><%= link_to prompt.name, "/action_prompt/previews/#{prompt.slug}", class: "cursor-pointer text-blue-500 underline hover:text-blue-600" %></li>
+              <li><%= link_to prompt.name, "/action_prompt/previews/#{prompt.slug}", class: "cursor-pointer underline  text-blue-600 hover:text-blue-800" %></li>
             <% end %>
           </ul>
         </div>

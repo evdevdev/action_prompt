@@ -35,7 +35,7 @@ Install the gem with `gem "action_prompt"`.
 
 3. Next, start up your rails server (`rails s`) and navigate to [http://localhost:3000/action_prompt/previews](http://localhost:3000/action_prompt/previews). You'll see a list of your prompts that resembles the following:
 
-   _image goes here_
+   ![Screenshot](docs/assets/images/screenshot.png)
 
    You can now preview your prompts.
 
