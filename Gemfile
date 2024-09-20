@@ -16,4 +16,3 @@ gem "rubocop-rails-omakase", require: false
 gem "debug"
 gem "erb_lint"
 gem "rubocop"
-  
