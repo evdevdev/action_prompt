@@ -1,5 +1,7 @@
 # Action Prompt
 
+[![CI](https://github.com/evdevdev/action_prompt/actions/workflows/ci.yml/badge.svg)](https://github.com/evdevdev/action_prompt/actions/workflows/ci.yml) [![Gem Version](https://badge.fury.io/rb/action_prompt.svg)](https://badge.fury.io/rb/action_prompt)
+
 Action Prompt provides a dead simple way to way to organize, preview, and render prompts within a Ruby on Rails App. Because this leverages the `ApplicationController`, you're able to leverage all the bells an whistles
 
 This draws heavy inspiration from `ActionMailer::Preview`.
