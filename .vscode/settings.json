@@ -3,7 +3,6 @@
     "editor.defaultFormatter": "Shopify.ruby-lsp"
   },
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -13,5 +12,6 @@
   },
   "[markdown]": {
    "editor.formatOnSave": true,
-  }
+  },
+  "rubyLsp.formatter": "auto"
 }

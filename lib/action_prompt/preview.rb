@@ -44,17 +44,6 @@ module ActionPrompt
       end
     end
 
-
-    class Prompt
-      attr_reader :name, :slug
-
-      # NOTE: this could probably be a Struct
-      def initialize(name:, slug:)
-        @name = name
-        @slug = slug
-      end
-    end
-
     def render(template_name, locals: {})
       ActionPrompt::Renderer.new.render(template_name, locals: locals)
     end
