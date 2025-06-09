@@ -22,7 +22,7 @@ Install the gem with `gem "action_prompt"`.
 1. Create a template for organizing your prompts located at your `app/prompts`. For example, you might create `app/prompts/hello_world.text.erb` and give it the following content:
 
    ```erb
-   You are a helpful assistant who replies with, "<%= @message >"
+   You are a helpful assistant who replies with, "<%= @message %>"
    ```
 
 2. Create a preview class. These live in `test/prompts` and they inherit from `ActionPrompt::Preview`. For example, you might create `tests/prompts/hello_world_preview.rb` and give it the following context:
